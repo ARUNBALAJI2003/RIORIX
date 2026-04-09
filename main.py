@@ -1,3 +1,6 @@
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
+
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -349,6 +352,8 @@ async def get_inbox(request: Request):
             })
     return {"messages": messages}
 
+app.mount("/static", StaticFiles(directory="static"), name="static")
+
 @app.get("/")
 def root():
-    return {"name": "RIORIX API", "version": "1.0.0", "status": "running"}
+    return FileResponse("static/index.html")

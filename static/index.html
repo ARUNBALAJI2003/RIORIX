@@ -283,7 +283,7 @@ footer{padding:60px 40px;border-top:1px solid var(--border);max-width:1280px;mar
 <body>
 
 <!-- Loader -->
-<div id="loader"><div class="loader-logo">RIORIX</div></div>
+<div id="loader" class="hidden"><div class="loader-logo">RIORIX</div></div>
 
 <!-- Toast Container -->
 <div id="toast-container"></div>
@@ -553,7 +553,7 @@ footer{padding:60px 40px;border-top:1px solid var(--border);max-width:1280px;mar
 
 <script>
 // ── State ──────────────────────────────────────────────────────────────────
-const API = 'http://localhost:8000';
+const API = 'http://127.0.0.1:8000';
 let state = {
   user: null,
   cart: [],
@@ -583,7 +583,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 
   setTimeout(() => {
     document.getElementById('loader').classList.add('hidden');
-  }, 1200);
+  }, 100);
 });
 
 // ── API helpers ───────────────────────────────────────────────────────────
